@@ -1,0 +1,1 @@
+web: gunicorn chrestos_project.wsgi
