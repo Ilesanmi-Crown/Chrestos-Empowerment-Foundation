@@ -1,1 +1,1 @@
-web: gunicorn chrestos_project.wsgi
+web: gunicorn christos_project.wsgi:application --bind 0.0.0.0:$PORT
