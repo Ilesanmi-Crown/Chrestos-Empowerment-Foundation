@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  
+
+
+  <style>
+    .nav .link:nth-child(3)::after{
+  width: 100%;
+  background-color: black;
+  transition: 0.5s;
+}
+  </style>
+    
+  <div class="what-we-do header">
+    <h2 class="weird-text">What We Do</h2>
+    <h1 class="what-we-do-h1">PROGRAMS</h1>
+  </div>
+
+  <section class="section the-next-TS">
+  <div class="next-content">
+   <div class="next-heading">
+    <h1 class="next-h1">The Next Teen Stars <svg width="171" height="27" viewBox="0 0 171 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 20.1162C11.5918 12.3275 30.2586 -1.35844 44.1918 6.20774C61.6082 15.6655 62.5014 26.2358 78.1315 22.0633C93.7616 17.8908 93.7616 0.0880876 116.537 6.20774C139.312 12.3274 152.71 24.845 167 18.1689" stroke="white" stroke-width="7" stroke-linecap="round"/>
+</svg>
+</h1>
+   </div>
+<p class="next-para">
+  Adolescence is a time of self-discovery and identity formation, when young people begin to establish a
+sense of who they are, what they believe in, and where they fit in the world. This makes adolescence a
+sensitive developmental window, characterized by significant opportunities.
+The better we help this young ones find natural talents, the more they can draw from them to search for
+and identify opportunities that will give them the chance to do what they do best every day, so they can
+then turn their raw talents into matured strengths and live up to their full potential....thus the creation
+of the TEEN SINGING COMPETITION "THE NEXT TEEN STAR"
+</p>
+
+
+  </div>    
+  <div class="next-images">
+  <img src="{% static 'assect/images/teen-star.png' %}" alt="ejejjej">
+</div>
+
+  </section>
+  <section class="section programs">
+    <div class="next-images">
+      <img src="{% static 'assect/images/teen-star.png' %}" alt="eemmemem">
+</div>
+
+  <div class="next-content">
+   <div class="next-heading">
+    <h1 class="next-h1">THE PROJECT <svg width="243" height="64" viewBox="0 0 243 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M197.83 58.0759C160.203 28.1104 71.3384 -21.0902 16.8907 21.8319C-51.169 75.4845 193.18 63.206 238 34.0966" stroke="#8A38F5" stroke-width="10" stroke-linecap="round"/>
+</svg>
+
+</h1>
+   </div>
+<p class="next-para">
+  The Next Teen Star is created mainly to mainly to encourage teenagers to learn to express their feelings
+and ideas and ideas through music.
+The first stage is the auditions where all the contestants are expected to send 2-3 minutes video entries
+of their songs.
+Second stage, the videos would be scrutinized by seasoned music acts, and winners selected.
+This winners will undergo training for the allocated period of time and would subsequently be given an
+opportunity to record their songs in a recording studio which would be sponsored by the organizers of "
+The Next Teen Star"
+</p>
+
+
+</div>    
+
+
+
+  
+</section>
+
+{% endblock content %}
