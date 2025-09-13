@@ -32,31 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },step);
   }
   counter("count1", 0, 200, 4000)
-  counter("count2", 0, 80, 2500)
+  counter("count2", 0, 80, 3000)
   counter("count3", 0, 100, 3000)
 })
 
-
-const sections = document.querySelectorAll(".section");
-
-window.addEventListener("scroll", checkbox());
-
-checkbox();
-
-function checkbox() {
-  const triggerbottom = window.innerHeight / 5 * 4;
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-
-    if (sectionTop < triggerbottom) {
-      section.classList.add("show-section");
-    }else {
-      section.classList.remove("show-section");
-    }
-  })
-}
-
-console.log(sections);
 
 
 {
@@ -65,22 +44,93 @@ console.log(sections);
   
 
   window.addEventListener("scroll", () => {
-    
-    if(lastScrollY == 0){
-      nav.classList.add("top")
-    }else{
-      nav.classList.remove("top")
-    }
-    lastScrollY = window.scrollY
-    
-    
     if (lastScrollY < window.scrollY){
       nav.classList.add("nav--hidden")
     }else{
       nav.classList.remove("nav--hidden")
     }
-    lastScrollY = window.scrollY
+
+
+    lastScrollY = window.scrollY;
+    
+
+
+    if(lastScrollY <= 0){
+      nav.classList.add("top")
+    }else{
+      nav.classList.remove("top")
+    }
+
+    lastScrollY = window.scrollY;
+    if (window.scrollY <= 0) {
+  nav.classList.add("top");
+} else {
+  nav.classList.remove("top");
+}
+lastScrollY = window.scrollY;
 
 
   });
 }
+
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]');
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget);
+    openModal(modal);
+  });
+});
+
+function openModal(modal) {
+  if (!modal) return;
+  modal.classList.add('active');
+  overlay.classList.add('active');
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal(modal) {
+  if (!modal) return;
+  modal.classList.remove('active');
+  overlay.classList.remove('active');
+  document.body.style.overflow = "";
+}
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal');
+    closeModal(modal);
+  });
+});
+
+overlay.addEventListener('click', () => {
+  document.querySelectorAll('.modal.active').forEach(modal => {
+    closeModal(modal);
+  });
+});
+
+// Allow closing modal with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll('.modal.active').forEach(modal => {
+      closeModal(modal);
+    });
+  }
+});
+
+
+  function copyNumber(numberId, messageId) {
+      const number = document.getElementById(numberId).innerText;
+      navigator.clipboard.writeText(number).then(() => {
+        const message = document.getElementById(messageId);
+        message.style.display = "block"; 
+        setTimeout(() => {
+          message.style.display = "none"; 
+        }, 2000);
+      }).catch(err => {
+        console.error("Failed to copy: ", err);
+      });
+    }
