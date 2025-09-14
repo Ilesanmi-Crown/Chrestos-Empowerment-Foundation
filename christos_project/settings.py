@@ -18,10 +18,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False
-ALLOWED_HOSTS = [
-    'chrestos-empowerment-foundation-1.onrender.com',
-    'yourdomain.com',               # add your custom domain(s) here
-]
+ALLOWED_HOSTS = ["chrestos-empowerment-foundation-1.onrender.com", "localhost", "127.0.0.1"]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
