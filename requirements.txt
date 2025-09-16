@@ -13,3 +13,4 @@ typing_extensions==4.15.0
 tzdata==2025.2
 urllib3==2.5.0
 django-compressor==4.5.1
+whitenoise==6.10.0
